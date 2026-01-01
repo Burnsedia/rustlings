@@ -3,3 +3,8 @@
 fn main() {
     call_me(); // Don't change this line
 }
+
+
+fun call_me() {
+    println!("Hi");
+}
