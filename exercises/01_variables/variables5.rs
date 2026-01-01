@@ -3,6 +3,9 @@ fn main() {
     println!("Spell a number: {number}");
 
     // TODO: Fix the compiler error by changing the line below without renaming the variable.
-    number = 3.to_string();
+    let number = 3.to_string();
     println!("Number plus two is: {}", number.parse::<i32>().unwrap() + 2);
 }
+
+
+
