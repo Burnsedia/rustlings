@@ -5,6 +5,6 @@ fn main() {
 }
 
 
-fun call_me() {
+fn call_me() {
     println!("Hi");
 }
