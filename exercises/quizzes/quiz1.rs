@@ -12,7 +12,7 @@
 // the quantity bought.
 // fn calculate_price_of_apples(???) -> ??? { ??? }
 fn calculate_price_of_apples(arg: i32) -> i32 {
-    arg * 2
+    return arg * 2
 }
 
 fn main() {
