@@ -5,12 +5,10 @@ fn vec_loop(input: &[i32]) -> Vec<i32> {
         // TODO: Multiply each element in the `input` slice by 2 and push it to
         // the `output` vector.
         let input = &[1, 2, 3];
-let mut output = Vec::new();
 
-for x in input {
-    output.push(*x * 2);
-}
-
+        for x in input {
+            output.push(*x * 2);
+        }
     }
 
     output
