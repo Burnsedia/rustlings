@@ -72,3 +72,9 @@ If you want to continue working on the exercises at a later point, you can simpl
 
 > [!NOTE]
 > the AI gave bad example code, may not be as usual unless I understand the syntax
+
+
+> [!NOTE]
+> 15:02
+> 
+
