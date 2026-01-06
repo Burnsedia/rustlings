@@ -76,5 +76,32 @@ If you want to continue working on the exercises at a later point, you can simpl
 
 > [!NOTE]
 > 15:02
-> 
+> needs to be mutable  
 
+# exercise/06/move_semantics3
+
+```bash
+error[E0596]: cannot borrow `vec` as mutable, as it is not declared as mutable
+ --> exercises/06_move_semantics/move_semantics3.rs:3:5
+  |
+3 |     vec.push(88);
+  |     ^^^ cannot borrow as mutable
+  |
+help: consider changing this to be mutable
+  |
+2 | fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
+  |             +++
+
+For more information about this error, try `rustc --explain E0596`.
+error: could not compile `exercises` (bin "move_semantics3") due to 1 previous error
+
+
+Progress: [############################################>-------------------------------------------------------------------------------------------------------------]  27/94
+Current exercise: exercises/06_move_semantics/move_semantics3.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+```
+```
+> [!TIP]
+> I nedd to make the vectotr mutable
