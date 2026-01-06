@@ -69,3 +69,6 @@ If you want to continue working on the exercises at a later point, you can simpl
 
 > [!TIP]
 > setup a good lsp, the AI is dumb
+
+> [!NOTE]
+> the AI gave bad example code, may not be as usual unless I understand the syntax
