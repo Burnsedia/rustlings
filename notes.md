@@ -189,3 +189,97 @@ different type than the matching type in the function declaration.
 
 > [!NOTE]
 >I am going to add the clone and string types 
+
+I am getting this error 
+```bash
+error[E0614]: type `char` cannot be dereferenced
+ --> exercises/06_move_semantics/move_semantics5.rs:8:5
+  |
+8 |     *data.chars().last().unwrap();
+  |     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ can't be dereferenced
+
+error[E0308]: mismatched types
+ --> exercises/06_move_semantics/move_semantics5.rs:7:35
+  |
+7 | fn get_char(mut data: &String) -> char {
+  |    --------                       ^^^^ expected `char`, found `()`
+  |    |
+  |    implicitly returns `()` as its body has no tail or `return` expression
+
+error[E0308]: mismatched types
+  --> exercises/06_move_semantics/move_semantics5.rs:13:12
+   |
+12 | fn string_uppercase(mut data: &String) {
+   |                               ------- expected due to this parameter type
+13 |     data = data.to_uppercase();
+   |            ^^^^^^^^^^^^^^^^^^^ expected `&String`, found `String`
+   |
+help: you might have meant to mutate the pointed at value being passed in, instead of changing the reference in the local binding
+   |
+12 ~ fn string_uppercase(data: &mut String) {
+13 ~     *data = data.to_uppercase();
+   |
+
+error[E0308]: mismatched types
+  --> exercises/06_move_semantics/move_semantics5.rs:21:14
+   |
+21 |     get_char(data.clone());
+   |     -------- ^^^^^^^^^^^^ expected `&String`, found `String`
+   |     |
+   |     arguments to this function are incorrect
+   |
+note: function defined here
+  --> exercises/06_move_semantics/move_semantics5.rs:7:4
+   |
+ 7 | fn get_char(mut data: &String) -> char {
+   |    ^^^^^^^^ -----------------
+help: consider borrowing here
+   |
+21 |     get_char(&data.clone());
+   |              +
+
+Some errors have detailed explanations: E0308, E0614.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `exercises` (bin "move_semantics5") due to 4 previous errors
+
+
+Progress: [###############################################>----------------------------------------------------------------------------------------------------------]  29/94
+Current exercise: exercises/06_move_semantics/move_semantics5.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+We hope you're enjoying learning Rust!
+If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
+[cypher@overlord rustlings]$
+
+```
+
+After I made these changes
+```typescript
+#![allow(clippy::ptr_arg)]
+
+// TODO: Fix the compiler errors without changing anything except adding or
+// removing references (the character `&`).
+
+// Shouldn't take ownership
+fn get_char(mut data: &String) -> char {
+    *data.chars().last().unwrap();
+}
+
+// Should take ownership
+fn string_uppercase(mut data: &String) {
+    data = data.to_uppercase();
+
+    println!("{data}");
+}
+
+fn main() {
+    let data = "Rust is great!".to_string();
+
+    get_char(data.clone());
+
+    string_uppercase(&data);
+} 
+```
+
+I added mut and '&' to the inputs of get_char function
