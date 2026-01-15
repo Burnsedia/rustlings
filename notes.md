@@ -114,6 +114,49 @@ an existing binding to be a mutable binding instead of an immutable one :)
 
 
 > [!NOTE]
-> 
+> I am getting this error
+```bash
+error[E0308]: mismatched types
+  --> exercises/06_move_semantics/move_semantics5.rs:13:12
+   |
+12 | fn string_uppercase(mut data: &String) {
+   |                               ------- expected due to this parameter type
+13 |     data = data.to_uppercase();
+   |            ^^^^^^^^^^^^^^^^^^^ expected `&String`, found `String`
+   |
+help: you might have meant to mutate the pointed at value being passed in, instead of changing the reference in the local binding
+   |
+12 ~ fn string_uppercase(data: &mut String) {
+13 ~     *data = data.to_uppercase();
+   |
 
+error[E0382]: borrow of moved value: `data`
+  --> exercises/06_move_semantics/move_semantics5.rs:23:22
+   |
+19 |     let data = "Rust is great!".to_string();
+   |         ---- move occurs because `data` has type `String`, which does not implement the `Copy` trait
+20 |
+21 |     get_char(data);
+   |              ---- value moved here
+22 |
+23 |     string_uppercase(&data);
+   |                      ^^^^^ value borrowed here after move
+   |
+note: consider changing this parameter type in function `get_char` to borrow instead if owning the value isn't necessary
+  --> exercises/06_move_semantics/move_semantics5.rs:7:19
+   |
+ 7 | fn get_char(data: String) -> char {
+   |    --------       ^^^^^^ this parameter takes ownership of the value
+   |    |
+   |    in this function
+help: consider cloning the value if the performance cost is acceptable
+   |
+21 |     get_char(data.clone());
+   |                  ++++++++
+
+Some errors have detailed explanations: E0308, E0382.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `exercises` (bin "move_semantics5") due to 2 previous errors
+```
+> I need do a stack trace
 
