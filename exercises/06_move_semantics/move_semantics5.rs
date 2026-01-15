@@ -4,8 +4,8 @@
 // removing references (the character `&`).
 
 // Shouldn't take ownership
-fn get_char(mut data: String) -> char {
-    data.chars().last().unwrap()
+fn get_char(mut data: &String) -> char {
+    *data.chars().last().unwrap();
 }
 
 // Should take ownership
