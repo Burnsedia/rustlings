@@ -33,7 +33,7 @@ mod tests {
     #[test]
     fn tuple_structs() {
         // TODO: Instantiate a tuple struct.
-        // let green =
+        let green = ColorTupleStruct();
 
         assert_eq!(green.0, 0);
         assert_eq!(green.1, 255);
