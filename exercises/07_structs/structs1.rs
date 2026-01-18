@@ -4,8 +4,7 @@ struct ColorRegularStruct {
     red: i32,
     green: i32,
     blue: i32,
-};
-//* TODO: Add the fields that the test `tuple_structs` expects */
+}
 struct ColorTupleStruct(i32,i32,i32);
 
 #[derive(Debug)]
@@ -26,7 +25,7 @@ mod tests {
             red: 0,
             green: 255,
             blue: 0,
-        }
+        };
 
         assert_eq!(green.red, 0);
         assert_eq!(green.green, 255);
