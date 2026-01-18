@@ -4,7 +4,7 @@ struct ColorRegularStruct {
     red: i32,
     green: i32,
     blue: i32,
-}
+};
 //* TODO: Add the fields that the test `tuple_structs` expects */
 struct ColorTupleStruct(i32,i32,i32);
 
