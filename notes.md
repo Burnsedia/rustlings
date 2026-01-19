@@ -287,3 +287,50 @@ I added mut and '&' to the inputs of get_char function
 
 > [!NOTE]
 > I need to learn stucts impl stuff
+
+```bash
+error[E0600]: cannot apply unary operator `!` to type `()`
+  --> exercises/07_structs/structs3.rs:62:9
+   |
+62 |         assert!(package.is_international());
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
+
+error[E0600]: cannot apply unary operator `!` to type `()`
+  --> exercises/07_structs/structs3.rs:72:17
+   |
+72 |         assert!(!package.is_international());
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
+
+error[E0308]: mismatched types
+  --> exercises/07_structs/structs3.rs:84:54
+   |
+84 |         assert_eq!(package.get_fees(cents_per_gram), 4500);
+   |                                                      ^^^^ expected `()`, found integer
+
+error[E0308]: mismatched types
+  --> exercises/07_structs/structs3.rs:85:58
+   |
+85 |         assert_eq!(package.get_fees(cents_per_gram * 2), 9000);
+   |                                                          ^^^^ expected `()`, found integer
+
+warning: unused variable: `cents_per_gram`
+  --> exercises/07_structs/structs3.rs:33:24
+   |
+33 |     fn get_fees(&self, cents_per_gram: u32) {
+   |                        ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_cents_per_gram`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0308, E0600.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `exercises` (bin "structs3" test) due to 4 previous errors; 1 warning emitted
+
+Output
+
+
+Progress: [####################################################>-----------------------------------------------------------------------------------------------------]  32/94
+Current exercise: exercises/07_structs/structs3.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+```
