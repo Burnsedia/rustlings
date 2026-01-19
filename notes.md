@@ -296,7 +296,7 @@ error[E0600]: cannot apply unary operator `!` to type `()`
    |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
 
 error[E0600]: cannot apply unary operator `!` to type `()`
-  --> exercises/07_structs/structs3.rs:72:17
+  --> exercises/07_structs/structs3.rs:72:17G
    |
 72 |         assert!(!package.is_international());
    |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
@@ -334,3 +334,33 @@ Current exercise: exercises/07_structs/structs3.rs
 h:hint / l:list / c:check all / x:reset / q:quit ?
 
 ```
+
+Expected type did not match the received type.
+
+Erroneous code examples:
+
+```
+fn plus_one(x: i32) -> i32 {
+    x + 1
+}
+
+plus_one("Not a number");
+//       ^^^^^^^^^^^^^^ expected `i32`, found `&str`
+
+if "Not a bool" {
+// ^^^^^^^^^^^^ expected `bool`, found `&str`
+}
+
+let x: f32 = "Not a float";
+//     ---   ^^^^^^^^^^^^^ expected `f32`, found `&str`
+//     |
+//     expected due to this
+```
+
+This error occurs when an expression was used in a place where the compiler
+expected an expression of a different type. It can occur in several cases, the
+most common being when calling a function and passing an argument which has a
+different type than the matching type in the function declaration.
+
+> [!NOTE]
+> I am not passing the right parmito, I need to learn the impl system
