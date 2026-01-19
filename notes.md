@@ -283,3 +283,7 @@ fn main() {
 ```
 
 I added mut and '&' to the inputs of get_char function
+
+
+> [!NOTE]
+> I need to learn stucts impl stuff
