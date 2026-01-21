@@ -73,7 +73,6 @@ If you want to continue working on the exercises at a later point, you can simpl
 > [!NOTE]
 > the AI gave bad example code, may not be as usual unless I understand the syntax
 
-
 > [!NOTE]
 > 15:02
 > needs to be mutable  
@@ -102,6 +101,7 @@ Current exercise: exercises/06_move_semantics/move_semantics3.rs
 h:hint / l:list / c:check all / x:reset / q:quit ?
 
 ```
+
 > [!TIP]
 > I nedd to make the vectotr mutable
 
@@ -112,9 +112,9 @@ of `fn fill_vec` that had `let mut vec = vec;` is no longer there. You can,
 instead of adding that line back, add `mut` in one place that will change
 an existing binding to be a mutable binding instead of an immutable one :)
 
-
 > [!NOTE]
 > I am getting this error
+
 ```bash
 error[E0308]: mismatched types
   --> exercises/06_move_semantics/move_semantics5.rs:13:12
@@ -158,6 +158,7 @@ Some errors have detailed explanations: E0308, E0382.
 For more information about an error, try `rustc --explain E0308`.
 error: could not compile `exercises` (bin "move_semantics5") due to 2 previous errors
 ```
+
 > I need do a stack trace
 
 Expected type did not match the received type.
@@ -188,9 +189,10 @@ most common being when calling a function and passing an argument which has a
 different type than the matching type in the function declaration.
 
 > [!NOTE]
->I am going to add the clone and string types 
+>I am going to add the clone and string types
 
-I am getting this error 
+I am getting this error
+
 ```bash
 error[E0614]: type `char` cannot be dereferenced
  --> exercises/06_move_semantics/move_semantics5.rs:8:5
@@ -255,6 +257,7 @@ If you want to continue working on the exercises at a later point, you can simpl
 ```
 
 After I made these changes
+
 ```typescript
 #![allow(clippy::ptr_arg)]
 
@@ -283,7 +286,6 @@ fn main() {
 ```
 
 I added mut and '&' to the inputs of get_char function
-
 
 > [!NOTE]
 > I need to learn stucts impl stuff
@@ -364,3 +366,53 @@ different type than the matching type in the function declaration.
 
 > [!NOTE]
 > I am not passing the right parmito, I need to learn the impl system
+
+```bash
+error[E0600]: cannot apply unary operator `!` to type `()`
+  --> exercises/07_structs/structs3.rs:62:9
+   |
+62 |         assert!(package.is_international());
+   |         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
+
+error[E0600]: cannot apply unary operator `!` to type `()`
+  --> exercises/07_structs/structs3.rs:72:17
+   |
+72 |         assert!(!package.is_international());
+   |                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^ cannot apply unary operator `!`
+
+error[E0308]: mismatched types
+  --> exercises/07_structs/structs3.rs:84:54
+   |
+84 |         assert_eq!(package.get_fees(cents_per_gram), 4500);
+   |                                                      ^^^^ expected `()`, found integer
+
+error[E0308]: mismatched types
+  --> exercises/07_structs/structs3.rs:85:58
+   |
+85 |         assert_eq!(package.get_fees(cents_per_gram * 2), 9000);
+   |                                                          ^^^^ expected `()`, found integer
+
+warning: unused variable: `cents_per_gram`
+  --> exercises/07_structs/structs3.rs:33:24
+   |
+33 |     fn get_fees(&self, cents_per_gram: u32) {
+   |                        ^^^^^^^^^^^^^^ help: if this is intentional, prefix it with an underscore: `_cents_per_gram`
+   |
+   = note: `#[warn(unused_variables)]` (part of `#[warn(unused)]`) on by default
+
+Some errors have detailed explanations: E0308, E0600.
+For more information about an error, try `rustc --explain E0308`.
+error: could not compile `exercises` (bin "structs3" test) due to 4 previous errors; 1 warning emitted
+
+Output
+
+
+Progress: [#################################################################>-------------------------------------------------------------------------------------------------------------------------------]  32/94
+Current exercise: exercises/07_structs/structs3.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+We hope you're enjoying learning Rust!
+If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
+[cypher@overlord rustlings]$
+```
