@@ -37,7 +37,7 @@ impl Package {
     // TODO: Add the correct return type to the function signature.
     fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // TODO: Calculate the package's fees.
-        self.weight_in_grams * cents_per_gram;
+        self.weight_in_grams * cents_per_gram
     }
 }
 
