@@ -56,7 +56,7 @@ impl State {
             Message::Echo(s) => {
                 self.echo(s);
             }
-            Message::ChangeColor(r, b, b) => {
+            Message::ChangeColor(r, g, b) => {
                 self.change_color(r, g, b);
             }
             Message::Quit => {
