@@ -11,6 +11,7 @@ fn compose_me(input: &str) -> String {
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    return input.replace("cars", "balloons");
 }
 
 fn main() {
