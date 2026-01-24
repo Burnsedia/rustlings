@@ -13,9 +13,9 @@ fn string(arg: String) {
 // Your task is to replace `placeholder(…)` with either `string_slice(…)`
 // or `string(…)` depending on what you think each value is.
 fn main() {
-    string("blue");
+    string_slice("blue");
 
-    string_slice("red".to_string());
+    string("red".to_string());
 
     string(String::from("hi"));
 
