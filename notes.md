@@ -416,3 +416,41 @@ We hope you're enjoying learning Rust!
 If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
 [cypher@overlord rustlings]$
 ```
+
+
+
+
+```bash
+error[E0433]: failed to resolve: use of undeclared type `SystemTime`
+ --> exercises/10_modules/modules3.rs:9:11
+  |
+9 |     match SystemTime::now().duration_since(UNIX_EPOCH) {
+  |           ^^^^^^^^^^ use of undeclared type `SystemTime`
+  |
+help: consider importing this struct
+  |
+8 + use std::time::SystemTime;
+  |
+
+error[E0425]: cannot find value `UNIX_EPOCH` in this scope
+ --> exercises/10_modules/modules3.rs:9:44
+  |
+9 |     match SystemTime::now().duration_since(UNIX_EPOCH) {
+  |                                            ^^^^^^^^^^ not found in this scope
+  |
+help: consider importing this constant
+  |
+8 + use std::time::UNIX_EPOCH;
+  |
+
+error[E0282]: type annotations needed
+  --> exercises/10_modules/modules3.rs:10:74
+   |
+10 |         Ok(n) => println!("1970-01-01 00:00:00 UTC was {} seconds ago!", n.as_secs()),
+   |                                                                          ^ cannot infer type
+
+Some errors have detailed explanations: E0282, E0425, E0433.
+For more information about an error, try `rustc --explain E0282`.
+error: could not compile `exercises` (bin "modules3") due to 3 previous errors
+
+```
