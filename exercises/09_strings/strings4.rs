@@ -19,7 +19,7 @@ fn main() {
 
     string(String::from("hi"));
 
-    string_slice("rust is fun!".to_owned());
+    string("rust is fun!".to_owned());
 
     string_slice("nice weather".into());
 
