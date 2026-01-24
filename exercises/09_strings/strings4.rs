@@ -29,7 +29,7 @@ fn main() {
     // Character indexing can be done using `s.chars().nth(INDEX)`.
     string_slice(&String::from("abc")[0..1]);
 
-    string("  hello there ".trim());
+    string_slice("  hello there ".trim());
 
     string("Happy Monday!".replace("Mon", "Tues"));
 
