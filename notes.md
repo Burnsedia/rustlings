@@ -417,9 +417,6 @@ If you want to continue working on the exercises at a later point, you can simpl
 [cypher@overlord rustlings]$
 ```
 
-
-
-
 ```bash
 error[E0433]: failed to resolve: use of undeclared type `SystemTime`
  --> exercises/10_modules/modules3.rs:9:11
@@ -453,4 +450,31 @@ Some errors have detailed explanations: E0282, E0425, E0433.
 For more information about an error, try `rustc --explain E0282`.
 error: could not compile `exercises` (bin "modules3") due to 3 previous errors
 
+```
+
+```bash
+error[E0425]: cannot find value `basket` in this scope
+  --> exercises/11_hashmaps/hashmaps1.rs:14:5
+   |
+14 |     basket.insert(String::from("banana"), 2);
+   |     ^^^^^^ not found in this scope
+
+error[E0425]: cannot find value `basket` in this scope
+  --> exercises/11_hashmaps/hashmaps1.rs:18:5
+   |
+18 |     basket
+   |     ^^^^^^ not found in this scope
+
+For more information about this error, try `rustc --explain E0425`.
+error: could not compile `exercises` (bin "hashmaps1") due to 2 previous errors
+
+
+Progress: [########################################################################################>--------------------------------------------------------------------------------------------------------]  43/94
+Current exercise: exercises/11_hashmaps/hashmaps1.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+We hope you're enjoying learning Rust!
+If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
+[cypher@overlord rustlings]$
 ```
