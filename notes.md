@@ -478,3 +478,40 @@ We hope you're enjoying learning Rust!
 If you want to continue working on the exercises at a later point, you can simply run `rustlings` again in this directory.
 [cypher@overlord rustlings]$
 ```
+
+```bash
+running 2 tests
+test tests::at_least_five_fruits ... FAILED
+test tests::at_least_three_types_of_fruits ... FAILED
+
+failures:
+
+---- tests::at_least_five_fruits stdout ----
+
+thread 'tests::at_least_five_fruits' (64927) panicked at exercises/11_hashmaps/hashmaps1.rs:39:9:
+assertion failed: basket.values().sum::<u32>() >= 5
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+
+---- tests::at_least_three_types_of_fruits stdout ----
+
+thread 'tests::at_least_three_types_of_fruits' (64928) panicked at exercises/11_hashmaps/hashmaps1.rs:33:9:
+assertion failed: basket.len() >= 3
+
+
+failures:
+    tests::at_least_five_fruits
+    tests::at_least_three_types_of_fruits
+
+test result: FAILED. 0 passed; 2 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.00s
+
+error: test failed, to rerun pass `--bin hashmaps1`
+
+Output
+
+
+Progress: [########################################################################################>--------------------------------------------------------------------------------------------------------]  43/94
+Current exercise: exercises/11_hashmaps/hashmaps1.rs
+
+h:hint / l:list / c:check all / x:reset / q:quit ?
+
+```
