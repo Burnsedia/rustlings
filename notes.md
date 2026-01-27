@@ -515,3 +515,17 @@ Current exercise: exercises/11_hashmaps/hashmaps1.rs
 h:hint / l:list / c:check all / x:reset / q:quit ?
 
 ```
+
+to create a hashmap I instance its like this
+
+```rust
+let mut basket = HashMap::new();
+```
+
+to append to a hashmap I insert like this
+
+```rust
+
+basket.insert(String::from("apple"), 2);
+
+```
