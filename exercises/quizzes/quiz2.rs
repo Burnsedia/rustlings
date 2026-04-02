@@ -27,7 +27,16 @@ mod my_module {
     use super::Command;
 
     // TODO: Complete the function as described above.
-    // pub fn transformer(input: ???) -> ??? { ??? }
+    pub fn transformer(input: Vec<String, Command>) -> Vec<String> {
+        let mut output = Vec::new();
+
+        for (s, cmd) in input {
+            let result = match cmd {
+                Command::Uppercase => s.to_uppercase(),
+                Command::Trim => s.trim().to_string(),
+            }
+        }
+    }
 }
 
 fn main() {
