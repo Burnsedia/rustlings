@@ -34,7 +34,7 @@ mod my_module {
             let result = match cmd {
                 Command::Uppercase => s.to_uppercase(),
                 Command::Trim => s.trim().to_string(),
-                Command::Append => s.push_str(" bar");
+                Command::Append => s.push_str(cmd);
             }
         }
     }
