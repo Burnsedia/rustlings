@@ -37,6 +37,7 @@ mod my_module {
                 Command::Append => s.push_str(cmd);
             }
         }
+        return output;
     }
 }
 
