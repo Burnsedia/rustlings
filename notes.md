@@ -527,7 +527,7 @@ to append to a hashmap I insert like this
 ```rust
 
 basket.insert(String::from("apple"), 2);
-
-
-
 ```
+
+> [!NOTE]
+> in functions you can just have the contents of the {} block without the ; and it will return
