@@ -6,9 +6,9 @@ fn bigger(a: i32, b: i32) -> i32 {
     // - additional variables
     if a == b {
         return a 
-    }else if a > b {
+    } else if a > b {
        return a
-    } else if b > a  {
+    } else b   {
        return b
     }
 }
