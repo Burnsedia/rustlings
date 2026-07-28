@@ -8,7 +8,7 @@ fn bigger(a: i32, b: i32) -> i32 {
         return a 
     } else if a > b {
        return a
-    } else b   {
+    } else    {
        return b
     }
 }
