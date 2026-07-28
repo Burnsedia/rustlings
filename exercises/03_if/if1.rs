@@ -5,13 +5,11 @@ fn bigger(a: i32, b: i32) -> i32 {
     // - another function call
     // - additional variables
     if a == b {
-         a 
-    }
-    if a > b {
-        a
-    }
-    if b > a  {
-        b
+        return a 
+    }else if a > b {
+       return a
+    } else if b > a  {
+       return b
     }
 }
 
